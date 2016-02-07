@@ -1,0 +1,70 @@
+#index {
+  margin: auto;
+  margin-top: 200px;
+  width: 900px;
+  height: 500px;
+}
+
+#objects {
+  width: 250px;
+  height: 500px;
+  float: left;
+}
+
+#objects_form {
+  width: 250px;
+  height: 100px;
+}
+
+#objects_list {
+  width: 250px;
+  height: 400px;
+}
+
+#variants {
+  width: 250px;
+  height: 500px;
+  float: left;
+}
+
+#variants_form {
+  width: 250px;
+  height: 100px;
+}
+
+#variants_list {
+  width: 250px;
+  height: 400px;
+}
+
+#synonyms {
+  width: 250px;
+  height: 500px;
+  float: left;
+}
+
+#synonyms_form {
+  width: 250px;
+  height: 100px;
+}
+
+#synonyms_list {
+  width: 250px;
+  height: 400px;
+}
+
+#states {
+  width: 250px;
+  height: 500px;
+  float: left;
+}
+
+#states_form {
+  width: 250px;
+  height: 100px;
+}
+
+#states_list {
+  width: 250px;
+  height: 400px;
+}

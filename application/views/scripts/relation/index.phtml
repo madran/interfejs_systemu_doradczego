@@ -1,0 +1,16 @@
+<?php
+if($this->relations) {
+  echo '<table>';
+  for($i = 0; $i < count($this->relations); $i++) {
+    echo '<tr>';
+    echo '<td>L = ' . $this->relations[$i]['objects_id_l'] . ' A = '
+     . $this->relations[$i]['action'] . ' P = '
+     . $this->relations[$i]['objects_id_r'] . ' S = '
+     . $this->relations[$i]['state'] . '</td>';
+    echo '<td><a href="' . $this->serverUrl() . $this->url(array('id' => $this->relations[$i]['id']),'relation_delete',true) . '">Delete</a></td>';
+  }
+  echo '</table>';
+}
+?>
+
+<?php echo $this->form; ?>

@@ -1,0 +1,22 @@
+<?php echo $this->doctype(); ?>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <?php echo $this->headLink()->appendStylesheet('/css/style.css'); ?>
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <a href="<?php echo $this->serverUrl() . $this->url(array(),'main',true); ?>">Główna</a>
+        <a href="<?php echo $this->serverUrl() . $this->url(array(),'object',true); ?>">Obiekty</a>
+        <a href="<?php echo $this->serverUrl() . $this->url(array(),'action',true); ?>">Akcje</a>
+        <a href="<?php echo $this->serverUrl() . $this->url(array(),'relation',true); ?>">Relacje</a>
+      </header>
+      <main>
+        <?php echo $this->layout()->content; ?>
+      </main>
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

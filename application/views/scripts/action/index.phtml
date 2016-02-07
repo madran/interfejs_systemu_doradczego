@@ -1,0 +1,14 @@
+<?php echo $this->actionForm; ?>
+
+<?php
+if(isset($this->actions)) {
+	echo '<table>';
+	foreach($this->actions as $action) {
+		echo '<tr>';
+		echo '<td>' . $action->getName() . '</td>';
+		echo '<td><a href="' . $this->serverUrl() . $this->url(array('id' => $action->getId()),'action_delete',true) . '">Delete</a></td>';
+		echo '</tr>';
+	}
+	echo '</table>';
+}
+?>

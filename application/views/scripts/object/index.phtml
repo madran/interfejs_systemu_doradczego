@@ -1,0 +1,88 @@
+<div id="objects">
+  <div id="objects_form">
+    <?php echo $this->form; ?>
+  </div>
+  <div id="objects_list">
+    <?php
+    if(isset($this->objects)) {
+      echo '<table>';
+      foreach($this->objects as $object) {
+        echo '<tr>';
+        //echo '<td><a href="/object/index/' . $object->getId() . '">' . $object->getName() . '</a></td>';
+        //echo '<td><a href="/object/delete/' . $object->getId() . '">Delete</a></td>';
+        echo '<td><a href="' . $this->serverUrl() . $this->url(array('id' => $object->getId()),'object_index',true) . '">' . $object->getName() . '</a></td>';
+        echo '<td><a href="' . $this->serverUrl() . $this->url(array('id' => $object->getId()),'object_delete',true) . '">Delete</a></td>';
+        echo '</tr>';
+      }
+      echo '</table>';
+    }
+    ?>
+  </div>
+</div>
+
+<div id="object">
+  <h2><?php if($this->objectName) {echo $this->objectName;} ?></h2>
+
+  <div id="synonyms">
+    <div id="synonyms_form">
+      <?php if($this->synonymForm) {echo $this->synonymForm;} ?>
+    </div>
+    <div id="synonyms_list">
+      <?php
+      if(isset($this->synonyms)) {
+        echo '<table>';
+        foreach($this->synonyms as $synonym) {
+          echo '<tr>';
+          echo '<td>' . $synonym->getName() . '</td>';
+          //echo '<td><a href="/synonym/delete/' . $this->id . '/' . $synonym->getId() . '">Delete</a></td>';
+          echo '<td><a href="' . $this->serverUrl() . $this->url(array('object_id' => $this->id, 'id' => $synonym->getId()),'synonym_delete',true) . '">Delete</a></td>';
+          echo '</tr>';
+        }
+        echo '</table>';
+      }
+      ?>
+    </div>
+  </div>
+
+  <div id="variants">
+    <div id="variants_form">
+      <?php if($this->variantForm) {echo $this->variantForm;} ?>
+    </div>
+    <div id="variants_list">
+      <?php
+      if(isset($this->variants)) {
+        echo '<table>';
+        foreach($this->variants as $variant) {
+          echo '<tr>';
+          echo '<td>' . $variant->getName() . '</td>';
+          // echo '<td><a href="/variant/delete/' . $this->id . '/' . $variant->getId() . '">Delete</a></td>';
+          echo '<td><a href="' . $this->serverUrl() . $this->url(array('object_id' => $this->id, 'id' => $variant->getId()),'variant_delete',true) . '">Delete</a></td>';
+          echo '</tr>';
+        }
+        echo '</table>';
+      }
+      ?>
+    </div>
+  </div>
+
+  <div id="states">
+    <div id="states_form">
+      <?php if($this->stateForm) {echo $this->stateForm;} ?>
+    </div>
+    <div id="states_list">
+      <?php
+      if(isset($this->states)) {
+        echo '<table>';
+        foreach($this->states as $state) {
+          echo '<tr>';
+          echo '<td>' . $state->getName() . '</td>';
+          // echo '<td><a href="/state/delete/' . $this->id . '/' . $state->getId() . '">Delete</a></td>';
+          echo '<td><a href="' . $this->serverUrl() . $this->url(array('object_id' => $this->id, 'id' => $state->getId()),'state_delete',true) . '">Delete</a></td>';
+          echo '</tr>';
+        }
+        echo '</table>';
+      }
+      ?>
+    </div>
+  </div>
+</div>
